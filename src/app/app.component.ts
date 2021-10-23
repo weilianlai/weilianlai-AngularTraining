@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'weilianlai-AngularTraining';
+  keyword='123';
+  result='';
+
+  doSearch(value:string){
+    this.result=value;
+  }
+
 }
