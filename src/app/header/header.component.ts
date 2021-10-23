@@ -10,7 +10,7 @@ export class HeaderComponent {
   sitelogo='/assets/images/logo.png';
   constructor() { }
 
- changeTitle($event:PointerEvent){
+ changeTitle($event:MouseEvent){
    if ($event.ctrlKey){
      this.sitename='The Will Will Web';
    }
