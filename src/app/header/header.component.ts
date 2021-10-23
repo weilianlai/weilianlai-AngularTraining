@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-
+export class HeaderComponent {
+  sitename='Hello World';
+  sitelogo='/assets/images/logo.png';
   constructor() { }
 
-  ngOnInit(): void {
-  }
+ changeTitle($event:PointerEvent){
+   if ($event.ctrlKey){
+     this.sitename='The Will Will Web';
+   }
+ }
 
 }
