@@ -1,3 +1,4 @@
+import { BackendService } from './backend.service';
 import { HttpClient} from '@angular/common/http';
 import { Component } from '@angular/core';
 
@@ -13,8 +14,8 @@ export class AppComponent {
 
   data: any[] = [];
 
-  constructor(private http:HttpClient){
-    http.get<any[]>('/api/articles.json').subscribe({
+  constructor(private backend:BackendService){
+    backend.getArticle().subscribe({
       next:(data) =>{
         this.data=data;
         console.log("data");
