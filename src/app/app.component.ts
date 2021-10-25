@@ -28,4 +28,8 @@ export class AppComponent {
     this.result=value;
   }
 
+  deleteArticle(id:number){
+    console.log("Delete Article ID:" + id);
+  }
+
 }
