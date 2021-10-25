@@ -18,7 +18,9 @@ export class AppComponent {
       next:(data) =>{
         this.data=data;
         console.log("data");
-      }
+      },
+      error:()=>{},
+      complete:()=>{}
     })
   }
 
