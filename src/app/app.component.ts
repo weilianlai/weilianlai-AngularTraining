@@ -11,7 +11,7 @@ export class AppComponent {
   keyword='123';
   result='';
 
-  data: any[];
+  data: any[] = [];
 
   constructor(private http:HttpClient){
     http.get<any[]>('/api/articles.json').subscribe({
