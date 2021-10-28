@@ -1,23 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
-export class ArticleComponent  implements OnInit{
+export class ArticleComponent {
 
-  @Input() item: any;
+  @Input() item!: Article;
   @Output() delete = new EventEmitter<number>();
 
   constructor() { }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.item['abc']=1;
-
-  }
 
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnChanges(changes: SimpleChanges): void {
