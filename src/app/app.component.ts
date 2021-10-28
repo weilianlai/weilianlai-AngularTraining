@@ -1,6 +1,6 @@
 import { BackendService } from './backend.service';
-import { HttpClient} from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +12,11 @@ export class AppComponent {
   keyword='123';
   result='';
 
-  data: any[] = [];
+  // data: any[] = [];
+  data$: Observable<any[]> = of([]);
 
   constructor(private backend:BackendService){
-    backend.getArticle().subscribe({
-      next:(data) =>{
-        this.data=data;
-        console.log("data");
-      },
-      error:()=>{},
-      complete:()=>{}
-    })
+    this.data$=backend.getArticle();
   }
 
   doSearch(value:string){

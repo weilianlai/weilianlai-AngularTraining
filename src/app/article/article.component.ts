@@ -19,6 +19,7 @@ export class ArticleComponent  implements OnInit{
 
   }
 
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
