@@ -10,8 +10,8 @@ import { Article } from './article';
 })
 export class AppComponent {
   title = 'weilianlai-AngularTraining';
-  keyword='123';
-  result='';
+  // keyword='123';
+  // result='';
 
   // data: any[] = [];
   data$: Observable<Article[]> = of([]);
@@ -20,9 +20,7 @@ export class AppComponent {
     this.data$=backend.getArticle();
   }
 
-  doSearch(value:string){
-    this.result=value;
-  }
+
 
   deleteArticle(id:number){
     console.log("Delete Article ID:" + id);
